@@ -11,6 +11,28 @@
     android:orientation="vertical"
     tools:context="br.com.jotaceassis.shiftpersistencia.UsuarioActivity">
 
-    
+    <EditText
+        android:id="@+id/etUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Nome do Usuario"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:text="Limpar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="limpar"/>
+        <Button
+            android:text="Conectar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="conectar"/>
+    </LinearLayout>
 
 </LinearLayout>
