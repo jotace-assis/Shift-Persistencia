@@ -7,6 +7,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.orhanobut.hawk.Hawk;
 
 public class UsuarioActivity extends AppCompatActivity {
 
@@ -24,6 +27,8 @@ public class UsuarioActivity extends AppCompatActivity {
         etUsuario = (EditText) findViewById(R.id.etUsuario);
         etUsuario.setText(sp.getString("usuario", ""));
 
+        Toast.makeText(this, Hawk.get("usuariosecreto", ""), Toast.LENGTH_SHORT).show();
+
         etUsuario.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -40,6 +45,8 @@ public class UsuarioActivity extends AppCompatActivity {
                 SharedPreferences.Editor e = sp.edit();
                 e.putString("usuario", editable.toString());
                 e.apply();
+
+                Hawk.put("usuariosecreto", editable.toString());
             }
         });
     }
